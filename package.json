@@ -1,0 +1,12 @@
+{
+  "name": "ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/brentttt/ts",
+  "author": "Brent",
+  "license": "MIT",
+  "dependencies": {
+    "dev-server": "^0.0.2",
+    "webpack": "^3.10.0"
+  }
+}
