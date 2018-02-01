@@ -1,0 +1,172 @@
+@import url(https://fonts.googleapis.com/css?family=Overpass:400,400i);.page-section {
+  box-sizing: border-box;
+  min-height: 200px;
+  padding: 70px 50px 100px 250px;
+  width: 100vw; }
+
+body {
+  font-family: 'Overpass', sans-serif; }
+
+.roasts-section {
+  background: gold;
+  overflow: auto; }
+
+.roast-container {
+  background: #231F20;
+  color: white;
+  cursor: pointer;
+  float: left;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  margin: 10px;
+  overflow: hidden;
+  padding: 20px;
+  padding-bottom: 45px;
+  position: relative;
+  width: 225px; }
+  .roast-container * {
+    pointer-events: none; }
+  .roast-container .heading-container {
+    height: 70px; }
+    .roast-container .heading-container .heading-container__text {
+      left: 20px;
+      position: absolute;
+      transition: .5s; }
+    .roast-container .heading-container h2 {
+      text-transform: uppercase;
+      margin-bottom: 0; }
+    .roast-container .heading-container .origin {
+      margin: 0;
+      text-transform: capitalize; }
+  .roast-container .bean-container {
+    float: left;
+    height: 40px;
+    left: -80px;
+    overflow: hidden;
+    position: relative;
+    top: 25px;
+    transition: .5s;
+    width: 50px; }
+    .roast-container .bean-container svg {
+      position: absolute;
+      right: 0;
+      top: 0; }
+  .roast-container:hover .bean-container {
+    left: 0px; }
+  .roast-container:hover .heading-container__text {
+    left: 80px;
+    position: absolute; }
+
+.desc-label {
+  margin-top: 20px;
+  margin-bottom: 0; }
+
+.roast-level {
+  background: linear-gradient(to right, white, transparent);
+  height: 10px;
+  margin: 10px 0;
+  max-width: 200px;
+  position: relative; }
+  .roast-level .roast-level__bar {
+    border-right: 3px solid orange;
+    height: calc(100% + 4px);
+    left: 0;
+    position: absolute;
+    top: -4px; }
+
+.taste-notes-container {
+  margin-top: 10px; }
+  .taste-notes-container .taste-note {
+    margin-right: 8px;
+    outline: 1px solid white;
+    padding: 2px 4px; }
+
+.roast-view-container {
+  animation-fill-mode: forwards;
+  background: #231F20;
+  box-sizing: border-box;
+  color: white;
+  position: fixed;
+  padding: 50px 100px;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0; }
+  .roast-view-container .roast-view-wrapper {
+    margin: auto;
+    max-width: 700px; }
+  .roast-view-container a {
+    color: gold;
+    display: block;
+    margin-bottom: 10px; }
+  .roast-view-container img {
+    width: 100%;
+    height: 400px; }
+  .roast-view-container h1 {
+    text-transform: uppercase; }
+
+.shop-section {
+  background: #327941; }
+
+.instafeed-wrapper {
+  background: #322F30;
+  box-sizing: border-box;
+  height: auto;
+  text-align: center;
+  overflow: auto;
+  position: relative; }
+  .instafeed-wrapper .instafeed-title a {
+    color: gold;
+    padding: 0 20px; }
+  .instafeed-wrapper .instafeed {
+    color: gold;
+    height: 400px;
+    overflow-x: scroll;
+    padding-left: 5px;
+    padding-right: 150px;
+    position: relative;
+    white-space: nowrap; }
+  .instafeed-wrapper .img_container {
+    box-sizing: border-box;
+    display: inline-block;
+    height: calc(100% - 50px);
+    margin: 15px;
+    margin-right: 0;
+    margin-top: 3px;
+    position: relative; }
+    .instafeed-wrapper .img_container a {
+      position: relative; }
+    .instafeed-wrapper .img_container p {
+      color: white;
+      display: none;
+      left: 10%;
+      pointer-events: none;
+      position: absolute;
+      top: 43%;
+      transform: translateY(-50%);
+      width: 80%;
+      white-space: normal; }
+    .instafeed-wrapper .img_container:hover p {
+      display: block; }
+  .instafeed-wrapper a:hover img {
+    filter: grayscale(80%) brightness(0.4) contrast(120%); }
+  .instafeed-wrapper img {
+    box-shadow: 0 0 5px #231F20;
+    height: 100%;
+    transition: all .2s; }
+  .instafeed-wrapper .instafeed-fade {
+    background: linear-gradient(to left, #322F30, rgba(50, 47, 48, 0));
+    top: 0;
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    width: 350px; }
+
+footer {
+  background: #231F20; }
+
+.footer-image {
+  margin: 50px;
+  margin-left: calc(50vw - 60px);
+  opacity: .4;
+  width: 120px; }
