@@ -4,13 +4,22 @@ $insta-bg: #322F30;
   background: $insta-bg;
   box-sizing: border-box;
   height: auto;
-  text-align: center;
+  text-align: left;
   overflow: auto;
   position: relative;
 
+  .instafeed-title {
+    color: white;
+    padding: 0 40px;
+  }
+
   .instafeed-title a {
     color: gold;
-    padding: 0 20px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   .instafeed {
@@ -43,6 +52,7 @@ $insta-bg: #322F30;
       left: 10%;
       pointer-events: none;
       position: absolute;
+      text-align: center;
       top: 43%;
       transform: translateY(-50%);
       width: 80%;

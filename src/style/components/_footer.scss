@@ -1,10 +1,17 @@
 footer {
   background: $grey;
+  padding-bottom: 10px;
 }
 
 .footer-image {
-  margin: 50px;
-  margin-left: calc(50vw - 60px);
+  margin: 20px;
+  margin-left: calc(50vw - 300px);
   opacity: .4;
-  width: 120px;
+  overflow: hidden;
+  width: 600px;
+}
+
+.footer__copyright {
+  color: #322F30;
+  text-align: center;
 }

@@ -4,7 +4,6 @@ $color: purple;
   background: $grey;
   color: white;
   cursor: pointer;
-  float: left;
   box-shadow: 0 0 8px rgba(255, 255, 255, .3);
   margin: 10px;
   overflow: hidden;
@@ -25,7 +24,6 @@ $color: purple;
       transition: .5s;
     }
     h2 {
-      // font-style: italic;
       text-transform: uppercase;
       margin-bottom: 0;
     }

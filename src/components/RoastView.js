@@ -3,18 +3,6 @@ import styled, { keyframes } from 'styled-components';
 
 const RoastView = (props) => {
 
-  // const viewAnimation = keyframes`
-  //   0% {
-  //     height: ${props.currentRoast.pos.height}px;
-  //     left: ${props.currentRoast.pos.x}px;
-  //     top: ${props.currentRoast.pos.y}px;
-  //     width: ${props.currentRoast.pos.width}px;
-  //   } 100% {
-  //     left: 0;
-  //     height: 100vh;
-  //     top: 0;
-  //     width: 100vw;
-  //   }`;
 
   const viewAnimation = keyframes`
     0% {
