@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Nav from './Nav';
 import Intro from './Intro';
 import RoastsSection from './RoastsSection';
 import ShopSection from './ShopSection';
@@ -18,6 +19,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="container">
+        <Nav />
         <Intro />
         <Insta />
         <RoastsSection roasts = {this.state.roasts}/>

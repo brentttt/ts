@@ -26,7 +26,7 @@ export default class ShopSection extends Component {
   }
   render() {
     return (
-      <div className="shop-section page-section">
+      <div className="shop-section page-section" id="shop">
         <div className="page-section__wrapper">
           <h1>Shop</h1>
           <div className="page-section__items-centered">
