@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from "react-router-dom";
 
 const debounce = require('debounce');
 
@@ -14,7 +15,8 @@ const Nav = (props) => {
           clear[j].classList.remove('nav__list__item--active');
         }
         let id = sections[i].getAttribute('id');
-        window.location.pathname = id;
+        // window.location.pathname = id;
+        this.props.history.push("/some/Path");
         document.getElementById(id + '-link').classList.add('nav__list__item--active');
         return;
       }

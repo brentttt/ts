@@ -5,7 +5,7 @@ module.exports = {
   entry: ['./src/app.js', './src/style/style.scss'],
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname, 'public')
+    path: path.join(__dirname, 'docs')
   },
   module: {
     rules: [
@@ -35,7 +35,7 @@ module.exports = {
     })
   ],
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
+    contentBase: path.join(__dirname, 'docs'),
     historyApiFallback: true
   },
   node: {
