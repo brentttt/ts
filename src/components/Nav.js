@@ -16,7 +16,7 @@ const Nav = (props) => {
         }
         let id = sections[i].getAttribute('id');
         // window.location.pathname = id;
-        this.props.history.push("/some/Path");
+        this.props.history.push("/some/testpath");
         document.getElementById(id + '-link').classList.add('nav__list__item--active');
         return;
       }
