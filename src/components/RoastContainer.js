@@ -8,6 +8,7 @@ const RoastContainer = (props) => {
       className="roast-container"
       onClick={function(e){
         props.handleViewRoast(props.roast, e.target);
+        props.updateUrl('roasts/' + props.roast.title.split(' ').join('').toLowerCase());
       }}
       style={{borderTop: props.roast.color + ' 6px solid', borderBottom: props.roast.color + ' 6px solid'}}>
       <div className="heading-container">

@@ -12,13 +12,29 @@ export default class RoastsSection extends Component {
     }
   }
   handleViewRoast = (roastToView, element) => {
-    const pos = element.getBoundingClientRect();
     this.setState(() => ({
-      currentRoast: {
-        roast: roastToView,
-        pos
-      }
+      currentRoast: roastToView
     }));
+  }
+  clearCurrentRoast = () => {
+    this.setState(() => ({
+      currentRoast: null
+    }));
+
+    this.props.updateUrl('/roasts');
+
+    document.getElementsByTagName('body')[0].classList.remove('lock');
+  }
+  componentDidUpdate = () => {
+    if(this.props.currentRoast && !this.state.currentRoast) {
+        this.setState(() => ({
+          currentRoast: data.roasts.filter((roast) => {
+            if(roast.title.split(" ").join("").toLowerCase() == this.props.currentRoast) {
+              return roast;
+            }
+          })[0]
+        }));
+    }
   }
   render() {
     return (
@@ -31,13 +47,14 @@ export default class RoastsSection extends Component {
                 <RoastContainer
                   key={i}
                   roast={roast}
-                  handleViewRoast={this.handleViewRoast}/>
-              )
+                  updateUrl={this.props.updateUrl}
+                  handleViewRoast={this.handleViewRoast}/>              )
             })}
             </div>
           </div>
           {this.state.currentRoast ?
-            <RoastView currentRoast={this.state.currentRoast}/> :
+            <RoastView currentRoast={this.state.currentRoast}
+            clearCurrentRoast={this.clearCurrentRoast}/> :
             null}
       </div>
     );

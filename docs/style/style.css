@@ -16,6 +16,9 @@
     display: flex;
     justify-content: center; }
 
+.lock {
+  overflow: hidden; }
+
 body {
   font-family: 'Overpass', sans-serif; }
 
@@ -46,7 +49,8 @@ body {
 
 .intro-section {
   background: #231F20;
-  color: white; }
+  color: white;
+  padding: 200px 0 0 0; }
 
 .roasts-section {
   background: gold;

@@ -4,26 +4,6 @@ import {withRouter} from "react-router-dom";
 const debounce = require('debounce');
 
 const Nav = (props) => {
-  // const event = debounce(() => {
-  //   let sections = document.getElementsByClassName('page-section');
-  //
-  //   for(let i = 0; i < sections.length; i++) {
-  //     let pos = sections[i].getBoundingClientRect();
-  //     if(pos.top + (pos.height * .75) > 0) {
-  //       let clear = document.querySelectorAll('.nav__list__item');
-  //       for(let j = 0; j < clear.length; j++) {
-  //         clear[j].classList.remove('nav__list__item--active');
-  //       }
-  //       let id = sections[i].getAttribute('id');
-  //       props.updateUrl(id)
-  //       console.log(id, 'test');
-  //       document.getElementById(id + '-link').classList.add('nav__list__item--active');
-  //       return;
-  //     }
-  //   }
-  // });
-  // removeEventListener('scroll', event);
-  // addEventListener('scroll', event);
   return(
     <div className="nav">
       <ul className="nav__list">
