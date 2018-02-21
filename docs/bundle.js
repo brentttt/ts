@@ -15338,8 +15338,8 @@ var App = function (_Component) {
           url: url
         };
       });
-      var elemPos = document.getElementById(url).offsetTop;
-      window.scrollTo(0, elemPos);
+      // const elemPos = document.getElementById(url).offsetTop;
+      // window.scrollTo(0, elemPos);
     };
 
     _this.state = {

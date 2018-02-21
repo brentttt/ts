@@ -49,8 +49,8 @@ class App extends Component {
     this.setState(() => ({
       url
     }))
-    const elemPos = document.getElementById(url).offsetTop;
-    window.scrollTo(0, elemPos);
+    // const elemPos = document.getElementById(url).offsetTop;
+    // window.scrollTo(0, elemPos);
   }
   render() {
     return (
