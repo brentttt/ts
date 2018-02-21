@@ -15338,9 +15338,9 @@ var App = function (_Component) {
           url: url
         };
       });
-      var elemPos = document.getElementById(url).offsetTop;
-      if (elemPos) {
-        window.scrollTo(0, elemPos);
+      var elem = document.getElementById(url);
+      if (elem) {
+        window.scrollTo(0, elemPos.offsetTop);
       }
     };
 
