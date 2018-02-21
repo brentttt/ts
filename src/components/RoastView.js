@@ -6,7 +6,7 @@ const RoastView = (props) => {
   return(
     <div className="roast-view-container">
       <div className="roast-view-wrapper">
-        <p onClick={props.clearCurrentRoast}>back</p>
+        <p className="back-button" onClick={props.clearCurrentRoast}>back</p>
         <img />
         <h1>{props.currentRoast.title}</h1>
         <p>{props.currentRoast.origin}</p>

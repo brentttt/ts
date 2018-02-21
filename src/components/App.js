@@ -80,7 +80,7 @@ class App extends Component {
         <Nav updateUrl={this.updateUrl}/>
         <Intro />
         <RoastsSection roasts={this.state.roasts} updateUrl={this.updateUrl} currentRoast={this.state.currentRoast}/>
-        <ShopSection shopItems={this.state.shopItems}/>
+        <ShopSection shopItems={this.state.shopItems} updateUrl={this.updateUrl} />
         <Footer />
       </div>
     )

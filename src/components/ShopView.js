@@ -10,23 +10,11 @@ export default class ShopView extends Component {
     }
   }
   render() {
-    // const viewAnimation = keyframes`
-    //   0% {
-    //     opacity: 0;
-    //   } 100% {
-    //     opacity: 1;
-    //   }`;
-    //
-    // const View = styled.div`
-    //   animation-fill-mode: forwards;
-    //   animation-name: ${viewAnimation};
-    //   animation-duration: .2s;
-    //   animation-iteration-count: 1;
-    // `;
+    document.getElementsByTagName('body')[0].classList.add('lock');
     return(
       <div className="shop-view-container">
         <div className="shop-view-wrapper">
-          <a href="#">back</a>
+          <p className="back-button" onClick={this.props.clearCurrentShopItem}>back</p>
           <div className="shop-item-image__wrapper">
             <div className="shop-item-image__thumbs">
               {this.props.currentShopItem.images.map((image, i) => {

@@ -1,5 +1,5 @@
 .nav {
-  background: $grey;
+  // background: $grey;
   box-sizing: border-box;
   color: white;
   height: 50px;
@@ -17,6 +17,7 @@
 }
 
 .nav__list__item {
+  cursor: pointer;
   display: inline;
   font-size: 1.1em;
   font-weight: 200;
@@ -24,5 +25,6 @@
 }
 
 .nav__list__item--active {
-  color: gold;
+  color: $orange;
+  // text-shadow: 0 1px 3px transparentize($grey, .5);
 }

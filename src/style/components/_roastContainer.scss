@@ -11,6 +11,7 @@ $color: purple;
   padding-bottom: 45px;
   position: relative;
   width: 225px;
+  transition: box-shadow .2s;
 
   & * {
     pointer-events: none;
@@ -51,6 +52,7 @@ $color: purple;
   }
 
   &:hover {
+    box-shadow: 0px 1px 5px orangered;
     .bean-container {
       left: 0px;
     }

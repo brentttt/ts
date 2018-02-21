@@ -13,7 +13,12 @@
   p {
     font-size: 1.1em;
     font-weight: 200;
+    line-height: 1.5em;
   }
+}
+
+a {
+  color: orange;
 }
 
 .page-section__wrapper {
@@ -28,4 +33,10 @@
 
 .lock {
   overflow: hidden;
+}
+
+.back-button {
+  color: $orange;
+  cursor: pointer;
+  margin-bottom: 0;
 }

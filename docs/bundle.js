@@ -2663,7 +2663,7 @@ var Insta = function Insta() {
     'div',
     { className: 'instafeed-wrapper' },
     _react2.default.createElement(
-      'h4',
+      'p',
       { className: 'instafeed-title' },
       'Keep up with ',
       _react2.default.createElement(
@@ -15379,7 +15379,7 @@ var App = function (_Component) {
         _react2.default.createElement(_Nav2.default, { updateUrl: this.updateUrl }),
         _react2.default.createElement(_Intro2.default, null),
         _react2.default.createElement(_RoastsSection2.default, { roasts: this.state.roasts, updateUrl: this.updateUrl, currentRoast: this.state.currentRoast }),
-        _react2.default.createElement(_ShopSection2.default, { shopItems: this.state.shopItems }),
+        _react2.default.createElement(_ShopSection2.default, { shopItems: this.state.shopItems, updateUrl: this.updateUrl }),
         _react2.default.createElement(_Footer2.default, null)
       );
     }
@@ -15457,6 +15457,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -15467,23 +15469,67 @@ var _Insta2 = _interopRequireDefault(_Insta);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Intro = function Intro() {
-  return _react2.default.createElement(
-    'div',
-    { className: 'intro-section page-section', id: 'info' },
-    _react2.default.createElement(
-      'h1',
-      null,
-      'Taxus Street Coffee'
-    ),
-    _react2.default.createElement(
-      'p',
-      null,
-      'We are a locally owned and operated coffee roastery sourcing, roasting, and brewing coffee with excellence.'
-    ),
-    _react2.default.createElement(_Insta2.default, null)
-  );
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Intro = function (_Component) {
+  _inherits(Intro, _Component);
+
+  function Intro() {
+    _classCallCheck(this, Intro);
+
+    return _possibleConstructorReturn(this, (Intro.__proto__ || Object.getPrototypeOf(Intro)).apply(this, arguments));
+  }
+
+  _createClass(Intro, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var beansContainer = document.createElement('div');
+      beansContainer.classList.add('bean-container');
+      var selector = document.querySelector('.intro-section__text');
+      if (selector) {
+        selector.appendChild(beansContainer);
+      };
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'intro-section page-section', id: 'info' },
+        _react2.default.createElement(
+          'div',
+          { className: 'intro-section__text' },
+          _react2.default.createElement(
+            'div',
+            { className: 'intro-section__text__logo' },
+            _react2.default.createElement('img', { src: '/images/logo-outlined-white.png' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'intro-section__text-wrapper' },
+            _react2.default.createElement(
+              'h1',
+              null,
+              'Taxus Street Coffee'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'We are a locally owned and operated coffee roastery sourcing, roasting, and brewing coffee with excellence.'
+            )
+          )
+        ),
+        _react2.default.createElement(_Insta2.default, null)
+      );
+    }
+  }]);
+
+  return Intro;
+}(_react.Component);
 
 exports.default = Intro;
 
@@ -16146,7 +16192,7 @@ var RoastView = function RoastView(props) {
       { className: 'roast-view-wrapper' },
       _react2.default.createElement(
         'p',
-        { onClick: props.clearCurrentRoast },
+        { className: 'back-button', onClick: props.clearCurrentRoast },
         'back'
       ),
       _react2.default.createElement('img', null),
@@ -18129,6 +18175,18 @@ var ShopSection = function (_Component) {
       });
     };
 
+    _this.clearCurrentShopItem = function () {
+      _this.setState(function () {
+        return {
+          currentShopItem: null
+        };
+      });
+
+      _this.props.updateUrl('/shop');
+
+      document.getElementsByTagName('body')[0].classList.remove('lock');
+    };
+
     _this.handleChangeShopImage = function (imageToChange) {
       _this.setState(function () {
         return {
@@ -18172,7 +18230,9 @@ var ShopSection = function (_Component) {
         this.state.currentShopItem ? _react2.default.createElement(_ShopView2.default, {
           currentShopItem: this.state.currentShopItem,
           currentShopImage: this.state.currentShopImage,
-          handleChangeShopImage: this.handleChangeShopImage }) : null
+          handleChangeShopImage: this.handleChangeShopImage,
+          updateUrl: this.props.updateUrl,
+          clearCurrentShopItem: this.clearCurrentShopItem }) : null
       );
     }
   }]);
@@ -18275,19 +18335,7 @@ var ShopView = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      // const viewAnimation = keyframes`
-      //   0% {
-      //     opacity: 0;
-      //   } 100% {
-      //     opacity: 1;
-      //   }`;
-      //
-      // const View = styled.div`
-      //   animation-fill-mode: forwards;
-      //   animation-name: ${viewAnimation};
-      //   animation-duration: .2s;
-      //   animation-iteration-count: 1;
-      // `;
+      document.getElementsByTagName('body')[0].classList.add('lock');
       return _react2.default.createElement(
         'div',
         { className: 'shop-view-container' },
@@ -18295,8 +18343,8 @@ var ShopView = function (_Component) {
           'div',
           { className: 'shop-view-wrapper' },
           _react2.default.createElement(
-            'a',
-            { href: '#' },
+            'p',
+            { className: 'back-button', onClick: this.props.clearCurrentShopItem },
             'back'
           ),
           _react2.default.createElement(

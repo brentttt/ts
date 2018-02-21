@@ -19,6 +19,15 @@ export default class ShopSection extends Component {
       currentShopImage: shopItemToView.images[0]
     }));
   }
+  clearCurrentShopItem = () => {
+    this.setState(() => ({
+      currentShopItem: null
+    }));
+
+    this.props.updateUrl('/shop');
+
+    document.getElementsByTagName('body')[0].classList.remove('lock');
+  }
   handleChangeShopImage = (imageToChange) => {
     this.setState(() => ({
       currentShopImage: imageToChange
@@ -39,7 +48,9 @@ export default class ShopSection extends Component {
           <ShopView
             currentShopItem={this.state.currentShopItem}
             currentShopImage={this.state.currentShopImage}
-            handleChangeShopImage={this.handleChangeShopImage}/> :
+            handleChangeShopImage={this.handleChangeShopImage}
+            updateUrl={this.props.updateUrl}
+            clearCurrentShopItem={this.clearCurrentShopItem}/> :
           null}
       </div>
     );

@@ -16,7 +16,7 @@ feed.run();
 const Insta = () => {
   return(
     <div className="instafeed-wrapper">
-      <h4 className="instafeed-title">Keep up with <a href="https://www.instagram.com/taxusstreetcoffee/">@taxusstreetcoffee</a> on Instagram</h4>
+      <p className="instafeed-title">Keep up with <a href="https://www.instagram.com/taxusstreetcoffee/">@taxusstreetcoffee</a> on Instagram</p>
       <div className="instafeed" id="instafeed"></div>
       <div className="instafeed-fade"></div>
     </div>
