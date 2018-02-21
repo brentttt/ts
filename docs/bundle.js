@@ -15338,8 +15338,10 @@ var App = function (_Component) {
           url: url
         };
       });
-      // const elemPos = document.getElementById(url).offsetTop;
-      // window.scrollTo(0, elemPos);
+      var elemPos = document.getElementById(url).offsetTop;
+      if (elemPos) {
+        window.scrollTo(0, elemPos);
+      }
     };
 
     _this.state = {
@@ -15506,7 +15508,7 @@ var Intro = function (_Component) {
           _react2.default.createElement(
             'div',
             { className: 'intro-section__text__logo' },
-            _react2.default.createElement('img', { src: '/images/logo-outlined-white.png' })
+            _react2.default.createElement('img', { src: 'images/logo-outlined-white.png' })
           ),
           _react2.default.createElement(
             'div',
